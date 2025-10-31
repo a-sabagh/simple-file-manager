@@ -1,52 +1,57 @@
-# FileManager
+# Simple File Manager 🗄️
 
-A simple file manager for navigating directories, allowing users to create, rename, delete, or copy files and directories, upload files, and download files.
+A lightweight web‑based file manager for browsing directories, uploading/downloading files, and performing basic file operations (create, rename, delete, copy).  
 
-![Screenshot](./screenshot.png)
+This version is scaffolded using **Docker Compose**, which makes it easy to get started without manual PHP/Apache setup.
 
-## Features
+---
 
-- **Navigate Directories**: Easily browse through directories and subdirectories.
-- **File Operations**: Create, rename, delete, or copy files and directories.
-- **File Upload**: Upload files to the desired directory.
-- **File Download**: Download files directly from the file manager.
-- **Simple Interface**: Lightweight and user-friendly design for efficient file management.
+## 🚀 Features
 
-## Installation
+- Navigate through directories and subdirectories  
+- Upload files  
+- Download files  
+- Create, rename, delete, copy files and directories  
+- Simple, user‑friendly interface  
 
-You can set up the FileManager using either **XAMPP** or **PHP's built-in server**. Follow the steps below for your preferred method.
+---
 
-## Option 1: Using XAMPP :)
+## 📦 Quick Setup (via Docker Compose)
 
-```bash
-git clone https://github.com/a-sabagh/FileManager.git
-```
-
-### Option 2: Using PHP's Built-in Server
-
-1. **Ensure PHP is Installed**:
+1. Clone the repository:  
    
-   - Verify that PHP is installed on your system by running php -v in your terminal. If not installed, download and install PHP from [https://www.php.net/](https://www.php.net/).
+   ```bash
+   git clone https://github.com/a-sabagh/simple-file-manager.git
+   cd simple-file-manager
+   ```
+2. Review/edit the `compose.yaml` file if needed (e.g., volume mapping, ports).  
+3. Launch the stack:  
+   
+   ```bash
+   docker-compose up -d
+   ```
+4. Open your browser and visit `http://localhost:YOUR_PORT` (or the host/port you configured).  
+5. You should now be able to use the file manager.
 
-2. **Clone the Repository**:
+---
 
-```bash
-git clone https://github.com/a-sabagh/FileManager.git
-```
+## 🔧 Configuration
 
-3. Navigate to the Project Directory:
+- **Volumes**: Modify the `volumes:` section in `compose.yaml` to map your host directory to the container’s file‑store directory.  
+- **Ports**: By default you’ll map host port → container port (e.g., `80:80`), but you can change this to any free port.  
+- **Persistent data**: Ensure your mapped directory is preserved across container restarts to keep your files safe.
 
-```bash
-cd FileManager
-```
+---
 
-4. Start PHP's Built-in Server:
+## Ashy bulbul release Alternative Setup
 
-```bash
-php -S localhost:8000
-```
+If you prefer to run without Docker, you can still use the application with a standard PHP server:  
 
-**Access the FileManager**:
-
-- Open your browser and go to http://localhost:8000/index.php.
-- The FileManager interface should now be accessible.
+1. Ensure PHP is installed (run `php -v`)  
+2. Clone the repository (as above)  
+3. From the project directory:  
+   
+   ```bash
+   php -S localhost:8000
+   ```
+4. Open your browser at `http://localhost:8000/index.php`
