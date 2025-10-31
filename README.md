@@ -30,7 +30,7 @@ This version is scaffolded using **Docker Compose**, which makes it easy to get 
    ```bash
    docker-compose up -d
    ```
-4. Open your browser and visit `http://localhost:YOUR_PORT` (or the host/port you configured).  
+4. Open your browser and visit `http://localhost:8088` (or the host/port you configured).  
 5. You should now be able to use the file manager.
 
 ---
