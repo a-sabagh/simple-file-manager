@@ -9,7 +9,7 @@
         if (isset($_GET['dir'])) {
             $dir = $_GET['dir'];
         } else {
-            $dir = "myComputer";
+            $dir = "home";
         }
         ?>
         <script>
