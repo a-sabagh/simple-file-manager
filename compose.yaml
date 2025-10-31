@@ -1,0 +1,18 @@
+services:
+  web: 
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    volumes:
+      - home-directory:/var/www/html/home/
+    networks:
+      - sfm-net
+    ports:
+      - "8088:80"
+    container_name: apache_filemanager
+networks:
+  sfm-net:
+
+volumes:
+  home-directory:
